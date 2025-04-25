@@ -8,6 +8,15 @@ const map = L.map('map').setView(initialCoords, initialZoom);
 
 // 2. Definir las capas base (Tiles)
 
+const wmsLayer= L.tileLayer.wms("http://10.226.0.110:8080/geoserver/gwc/service/wms", {
+        maxZoom: 20,
+	layers: 'COBERTURACCOPH:COMERCIAL',
+        format: 'image/png',
+        transparent: true,
+	attribution: '<a href="https://copelco.coop">COPELCO LTDA</a>'
+    });
+
+
 // Capa de OpenStreetMap
 const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -38,9 +47,10 @@ osmLayer.addTo(map);
 
 // 4. Crear el objeto de capas base para el control
 const baseLayers = {
-    "OpenStreetMap": osmLayer,
-    "Google Satélite (Ver Advertencia)": googleSatLayer,
-    "ESRI World Imagery": esriWorldImagery // Alternativa recomendada
+	"CopelcoMap": wmsLayer,
+	"OpenStreetMap": osmLayer,
+	"Google Satélite (Ver Advertencia)": googleSatLayer,
+	"ESRI World Imagery": esriWorldImagery // Alternativa recomendada
 };
 
 // 5. Añadir el control de capas al mapa
