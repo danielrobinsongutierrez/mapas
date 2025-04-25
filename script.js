@@ -1,7 +1,7 @@
 // 1. Inicializar el mapa
 // Coordenadas iniciales (ej: centro de Argentina) y nivel de zoom
-const initialCoords = [-38.4161, -63.6167]; // Latitud, Longitud
-const initialZoom = 5;
+const initialCoords = [-38.93782890057557, -69.22026749578369]; // Latitud, Longitud Cutral Co
+const initialZoom = 15;
 
 // Creamos la instancia del mapa en el div con id="map"
 const map = L.map('map').setView(initialCoords, initialZoom);
