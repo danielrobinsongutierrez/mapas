@@ -8,7 +8,7 @@ const map = L.map('map').setView(initialCoords, initialZoom);
 
 // 2. Definir las capas base (Tiles)
 
-const wmsLayer= L.tileLayer.wms("http://10.226.0.110:8080/geoserver/gwc/service/wms", {
+const wmsLayer = L.tileLayer.wms("http://10.226.0.110:8080/geoserver/gwc/service/wms", {
         maxZoom: 20,
 	layers: 'COBERTURACCOPH:COMERCIAL',
         format: 'image/png',
